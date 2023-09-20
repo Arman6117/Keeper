@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+@layer base {
+  *{
+    @apply p-0 m-0 box-border 
+  }
+  body{
+    @apply bg-white px-0 py-0 scrollbar-thin scrollbar-track-amber-400 overflow-x-hidden
+  }
+  header{
+    @apply bg-[#f5ba13] my-auto  py-4 px-8 shadow-md w-full
+  }
+  header h1{
+    @apply text-white font-extralight
+  }
+ footer{
+  @apply absolute text-center bottom-0 w-[98%] h-10
+ }
+ footer p {
+  @apply  text-[#ccc]
+ }
+ form.create-note button {
+  @apply absolute right-4  -bottom-4 bg-[#f5ba13] text-white border-none rounded-full w-9 h-9 cursor-pointer outline-none
+ }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components{
+  .note{
+    @apply bg-white rounded-lg shadow-xl p-[10px] w-52 sm:w-60  m-4 float-left
+  }
+  .note h1{
+    @apply text-[1.1rem] mb-[6px]
+  }
+  .note p{
+    @apply text-[1.1rem] mb-[10px] whitespace-pre-wrap break-words
+  }
+  .note button{
+    @apply relative float-right mr-[10px] bg-white text-[#f5ba13] border-none w-9 h-9 cursor-pointer outline-none
+  }
+  .create-note{
+    @apply relative sm:w-[480px] w-full mt-[30px] mr-auto mb-[20px] ml-auto bg-white rounded-lg p-4 shadow-2xl
+  }
+  .create-note input,
+  .create-note textarea{
+    @apply w-full border-none p-1 outline-none text-[1.2em] text-inherit resize-none
+  }
+  .loginBtn{
+    @apply text-white font-semibold border-white hover:border-[1.5px] z-10 cursor-pointer rounded-md w-20 text-center transition-all
+  }
+  .signupBtn{
+    @apply text-[#f5ba13] font-semibold text-center w-20 bg-white cursor-pointer rounded-md hover:bg-[#f5ba13] transition-all hover:border-white hover:border-[1.5px] hover:text-white
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+header h1 {
+  /* color: #fff; */
+  font-family: "McLaren", cursive;
+  /* font-weight: 200; */
 }
+
+
+
+
+
+
+
