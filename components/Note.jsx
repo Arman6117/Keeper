@@ -1,10 +1,15 @@
-// import React from "react";
+"use client";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Fab, Zoom } from "@mui/material";
-
+import { useUser } from "@clerk/nextjs";
 function Note(props) {
+  const { isLoaded, isSignedIn } = useUser();
   function handleClick() {
-    props.onDelete(props.id);
+    if (isSignedIn && isLoaded) {
+      props.onDelete(props.id);
+    } else {
+      props.onDelete(props.sId);
+    }
   }
 
   return (
@@ -12,7 +17,7 @@ function Note(props) {
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       <Zoom in={true}>
-        <Fab color = "warning"  onClick={handleClick}>
+        <Fab color="warning" onClick={handleClick}>
           <DeleteIcon />
         </Fab>
       </Zoom>

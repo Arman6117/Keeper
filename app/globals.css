@@ -49,10 +49,10 @@
     @apply w-full border-none p-1 outline-none text-[1.2em] text-inherit resize-none
   }
   .loginBtn{
-    @apply text-white font-semibold border-white hover:border-[1.5px] z-10 cursor-pointer rounded-md w-20 text-center transition-all
+    @apply text-white mt-1 font-semibold border-white hover:border-[1.5px] z-10 cursor-pointer rounded-md w-20 text-center transition-all
   }
   .signupBtn{
-    @apply text-[#f5ba13] font-semibold text-center w-20 bg-white cursor-pointer rounded-md hover:bg-[#f5ba13] transition-all hover:border-white hover:border-[1.5px] hover:text-white
+    @apply text-[#f5ba13] mt-1 font-semibold text-center w-20 bg-white cursor-pointer rounded-md hover:bg-[#f5ba13] transition-all hover:border-white hover:border-[1.5px] hover:text-white
   }
 }
 
