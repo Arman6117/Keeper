@@ -50,7 +50,12 @@ const Home = () => {
       <Header />
       <CreateArea fetchNote={fetchNotes} onAdd={addNote} />
       {isLoaded && isSignedIn ? null : (
-        <Note title={"Tip"} content={"Create an account to save  notes"} />
+        
+       <div className="flex items-center justify-center sm:inline">
+
+        <Note title={"Tip"} content={"Create an account to save  notes"} onDelete={deleteNote} />
+       </div>
+        
       )}
 
       {notes.map((noteItem, index) => {

@@ -50,6 +50,7 @@ function CreateArea({ fetchNote, onAdd }) {
             }}
             placeholder="Title"
             value={title}
+            required
           />
         )}
 
@@ -62,6 +63,7 @@ function CreateArea({ fetchNote, onAdd }) {
           placeholder="Take a note..."
           value={note}
           rows={expand ? "3" : "1"}
+          required
         />
         <Zoom in={expand}>
           <Fab color="warning" className="note" onClick={saveNote}>
